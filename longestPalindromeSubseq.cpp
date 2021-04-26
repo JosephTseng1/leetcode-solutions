@@ -4,16 +4,13 @@ public:
         if (s.empty()) {
             return s;
         }
-        int max = 1;
-        int start = 0;
-        int n = s.size();
+        int max = 1, start = 0, n = s.size();
         bool dp[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (i == j) {
                     dp[i][j] = true;
-                    start = i;
-                } else{
+                } else {
                     dp[i][j] = false;
                 }
             }
