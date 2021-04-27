@@ -22,14 +22,14 @@ public:
                 max = 2;
             }
         }
-        for (int i = n-1; i >= 0; i--) {
-            for (int j = 3; j <= n; j++) {
-                int end = i + j - 1;
-                if (end < n && s[i] == s[end] && dp[i+1][end-1]) {
-                    dp[i][end] = true;
-                    if (j > max) {
+        for (int k = 3; k <= n; k++) {
+            for (int i = 0; i < n-k+1 ; i++) {
+                int j = i + k - 1;
+                if (dp[i+1][j-1] && s[i] == s[j]) {
+                    dp[i][j] = true;
+                    if (k > max) {
                         start = i;
-                        max = j;
+                        max = k;
                     }
                 }
             }
